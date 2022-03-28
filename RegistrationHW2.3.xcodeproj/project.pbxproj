@@ -14,6 +14,7 @@
 		76391C3527EF60FC005DD90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76391C3427EF60FC005DD90D /* Assets.xcassets */; };
 		76391C3827EF60FC005DD90D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76391C3627EF60FC005DD90D /* LaunchScreen.storyboard */; };
 		768D940927F2283600419E32 /* Persone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D940827F2283600419E32 /* Persone.swift */; };
+		768D940B27F248BF00419E32 /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D940A27F248BF00419E32 /* HobbyViewController.swift */; };
 		76BA4FB627EF655600271692 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA4FB527EF655600271692 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		76391C3727EF60FC005DD90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76391C3927EF60FC005DD90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		768D940827F2283600419E32 /* Persone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persone.swift; sourceTree = "<group>"; };
+		768D940A27F248BF00419E32 /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
 		76BA4FB527EF655600271692 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 			children = (
 				76391C2F27EF60FB005DD90D /* LoginViewController.swift */,
 				76BA4FB527EF655600271692 /* WelcomeViewController.swift */,
+				768D940A27F248BF00419E32 /* HobbyViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				76391C3027EF60FB005DD90D /* LoginViewController.swift in Sources */,
 				76BA4FB627EF655600271692 /* WelcomeViewController.swift in Sources */,
 				76391C2C27EF60FB005DD90D /* AppDelegate.swift in Sources */,
+				768D940B27F248BF00419E32 /* HobbyViewController.swift in Sources */,
 				768D940927F2283600419E32 /* Persone.swift in Sources */,
 				76391C2E27EF60FB005DD90D /* SceneDelegate.swift in Sources */,
 			);

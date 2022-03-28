@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let personMax = Persone.aboutMe()
+    
     private let name = "Max"
     private let password = "12345"
     
@@ -29,20 +31,33 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let infoVC = segue.destination as? WelcomeViewController else { return }
-        infoVC.welcomeName = name
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let welcomVC = viewController as? WelcomeViewController {
+                welcomVC.welcomeName = personMax.logIn
+                welcomVC.imagePersone = personMax.image
+            } else if let hobbyVC = viewController as? HobbyViewController {
+                hobbyVC.test = "hhshhd"
+            }
+        }
+        
+        
+//        guard let infoVC = segue.destination as? WelcomeViewController else { return }
+        
     }
     
     @IBAction func forgotName() {
-        remindInfo(fo: name)
+        remindInfo(fo: personMax.logIn)
     }
     
     @IBAction func forgotPasword() {
-        remindInfo(fo: password)
+        remindInfo(fo: personMax.password)
     }
     
     @IBAction func logInAction() {
-        guard nameTextField.text != name || passwordTextField.text != password else { return }
+        guard nameTextField.text != personMax.logIn || passwordTextField.text != personMax.password else { return }
         errorLogIn()
     }
     
