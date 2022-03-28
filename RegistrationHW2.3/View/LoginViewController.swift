@@ -9,11 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private let name = "Max"
-    private let password = "12345"
-    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    private let name = "Max"
+    private let password = "12345"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +25,12 @@ class LoginViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        nameTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoVC = segue.destination as? WelcomeViewController else { return }
-        infoVC.welcomeName = nameTextField.text ?? ""
+        infoVC.welcomeName = name
     }
     
     @IBAction func forgotName() {
@@ -42,7 +41,7 @@ class LoginViewController: UIViewController {
         remindInfo(fo: password)
     }
     
-    @IBAction func logInAction(_ sender: Any) {
+    @IBAction func logInAction() {
         guard nameTextField.text != name || passwordTextField.text != password else { return }
         errorLogIn()
     }
@@ -89,7 +88,12 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        passwordTextField.becomeFirstResponder()
+        if textField == nameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+           logInAction()
+           performSegue(withIdentifier: "welcomeVC", sender: nil)
+        }
     
         return true
     }
