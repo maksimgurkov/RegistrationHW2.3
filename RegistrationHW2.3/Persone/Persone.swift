@@ -11,6 +11,8 @@ import UIKit
 struct Persone {
     let logIn: String
     let password: String
+    let name: String
+    let surName: String
     let image: UIImage
     let aboutMe: Info
     
@@ -18,6 +20,8 @@ struct Persone {
         Persone(
             logIn: "Max",
             password: "12345",
+            name: "Maksim",
+            surName: "Gurkov",
             image: UIImage(named: "2")!,
             aboutMe: Info(
                 work: Work(
@@ -28,10 +32,12 @@ struct Persone {
                     game: "Video games",
                     sport: "Football",
                     serial: Serial(
-                        serialOne: "",
-                        serialTwo: "",
-                        serialThree: ""))))
-        
+                        serialOne: "Game of Throne",
+                        serialTwo: "Silicon Valley",
+                        serialThree: "See")
+                )
+            )
+        )
     }
 }
 

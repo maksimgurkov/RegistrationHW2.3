@@ -36,15 +36,22 @@ class LoginViewController: UIViewController {
         
         for viewController in viewControllers {
             if let welcomVC = viewController as? WelcomeViewController {
-                welcomVC.welcomeName = personMax.logIn
+                welcomVC.welcomeName = personMax.name
+                welcomVC.welcomeSurname = personMax.surName
                 welcomVC.imagePersone = personMax.image
             } else if let hobbyVC = viewController as? HobbyViewController {
-                hobbyVC.test = "hhshhd"
+                hobbyVC.game = personMax.aboutMe.hobby.game
+                hobbyVC.football = personMax.aboutMe.hobby.sport
+            } else if let serialVC = viewController as? SerialViewController {
+                serialVC.serialOne = personMax.aboutMe.hobby.serial.serialOne
+                serialVC.serialTwo = personMax.aboutMe.hobby.serial.serialTwo
+                serialVC.serialThree = personMax.aboutMe.hobby.serial.serialThree
+            } else if let workVC = viewController as? WorkViewController {
+                workVC.townText = personMax.aboutMe.work.address
+                workVC.componyText = personMax.aboutMe.work.nameCompany
+                workVC.postText = personMax.aboutMe.work.post
             }
         }
-        
-        
-//        guard let infoVC = segue.destination as? WelcomeViewController else { return }
         
     }
     
