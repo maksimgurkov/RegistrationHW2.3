@@ -13,16 +13,14 @@ class SerialViewController: UIViewController {
     @IBOutlet weak var twoSerialLabel: UILabel!
     @IBOutlet weak var threeSerialLabel: UILabel!
     
-    var serialOne = ""
-    var serialTwo = ""
-    var serialThree = ""
+    var person: Persone!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        oneSerialLabel.text = serialOne
-        twoSerialLabel.text = serialTwo
-        threeSerialLabel.text = serialThree
+        oneSerialLabel.text = person.aboutMe.hobby.serial.serialOne
+        twoSerialLabel.text = person.aboutMe.hobby.serial.serialTwo
+        threeSerialLabel.text = person.aboutMe.hobby.serial.serialThree
 
     }
 }

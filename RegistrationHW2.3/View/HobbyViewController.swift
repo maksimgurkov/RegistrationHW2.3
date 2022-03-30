@@ -12,16 +12,13 @@ class HobbyViewController: UIViewController {
     @IBOutlet weak var hobbyLabel: UILabel!
     @IBOutlet weak var footballLabel: UILabel!
     
-    var game = ""
-    var football = ""
+    var person: Persone!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hobbyLabel.text = game
-        footballLabel.text = football
+        hobbyLabel.text = person.aboutMe.hobby.game
+        footballLabel.text = person.aboutMe.hobby.sport
 
   
     }

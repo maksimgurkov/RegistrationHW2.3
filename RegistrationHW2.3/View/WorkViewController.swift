@@ -13,16 +13,14 @@ class WorkViewController: UIViewController {
     @IBOutlet weak var componyLabel: UILabel!
     @IBOutlet weak var postLabel: UILabel!
     
-    var townText = ""
-    var componyText = ""
-    var postText = ""
+    var person: Persone!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        townLabel.text = townText
-        componyLabel.text = componyText
-        postLabel.text = postText
+        townLabel.text = person.aboutMe.work.address
+        componyLabel.text = person.aboutMe.work.nameCompany
+        postLabel.text = person.aboutMe.work.post
     }
 
 }
